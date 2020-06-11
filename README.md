@@ -1,7 +1,7 @@
 # JavaScript
 这是一个自己基于loon瞎倒腾的脚本
 
-/****
+
 这是梨涡的任务查看。
 进野比大佬的 bean.m.jd.com 再签到一下就能获取cookie了。
 【Loon 2.1+ 脚本配置】:
@@ -11,4 +11,4 @@ cron "0 */1 * * *" tag=京东梨涡任务查看, script-path=https://raw.githubu
 http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwocookie.js
 [MITM]
 hostname = api.m.jd.com
-******/
+
