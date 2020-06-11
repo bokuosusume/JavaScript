@@ -79,8 +79,11 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
 )}
 
 get_data(params1)
+await 10
 get_data(params2)
+await 10
 get_data(params3)
+await 10
 get_data(params4)
 
 $done({})
