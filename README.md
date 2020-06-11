@@ -13,6 +13,6 @@
 cron "0 */1 * * *" tag=京东梨涡任务查看, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwotaskview.js
 http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwocookie.js 
 
-[MITM]
+[MITM] 
 hostname = api.m.jd.com
 
