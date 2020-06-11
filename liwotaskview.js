@@ -77,15 +77,10 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     console.log(list)   
   }
 )}
-
 get_data(params1)
-
 get_data(params2)
-
 get_data(params3)
-
 get_data(params4)
-
 $done({})
 
 
