@@ -61,17 +61,17 @@ var params4 = {
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
-  let task_list = JSON.stringify(task_data,["detail","unitPrice","buttonStr"])
+  let task_list = JSON.stringify(task_data,["taskName","unitPrice","buttonStr"])
   let t = JSON.parse(task_list)
   var i,X
   var list = ""
   for (i=0; i<t.length;i++){
     x = t[i]
-    var msg = (i+1)+" "+"📋["+ x.detail +"] "+"💰"+ x.unitPrice +"元 "+"🎉"+ x.buttonStr + `\n`
+    var msg = (i+1)+" "+"📌["+ x.taskName +"] "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + `\n`
    
     list = list + msg 
     }
-    let subTitle = `🙂梨涡闲时提醒`
+    let subTitle = `😊梨涡闲时提醒`
     let title = `[任务详情]`
       $notification.post(subTitle, title,list)
     console.log(list)   
