@@ -71,10 +71,31 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
    
     list = list + msg 
     }
-    let subTitle = `😊梨涡闲时提醒`
-    let title = `[任务详情]`
+    if (p.url == pick){
+      let subTitle = `😊梨涡闲时提醒`
+      let title = `--票选任务详情--`
       $notification.post(subTitle, title,list)
-    console.log(list)   
+      console.log(list) 
+    }
+    else if (p.url == review){
+      let subTitle = `😊梨涡闲时任务提醒`
+      let title = `--调研任务详情--`
+      $notification.post(subTitle, title,list)
+      console.log(list) 
+    }
+    else if (p.url == talk){
+      let subTitle = `😊梨涡闲时任务提醒`
+      let title = `--话题任务详情--`
+      $notification.post(subTitle, title,list)
+      console.log(list) 
+    } 
+    else if (p.url == invite){
+      let subTitle = `😊梨涡闲时任务提醒`
+      let title = `--测评任务详情--`
+      $notification.post(subTitle, title,list)
+      console.log(list) 
+    }
+    else {$notification.post(subTitle, `获取失败`)}
   }
 )}
 get_data(params1)
@@ -82,6 +103,3 @@ get_data(params2)
 get_data(params3)
 get_data(params4)
 $done({})
-
-
-  
