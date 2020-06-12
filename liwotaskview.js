@@ -67,7 +67,7 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var list = ""
   for (i=0; i<t.length;i++){
     x = t[i]
-    var msg = (i+1)+"."+"🔴"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + `\n`
+    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + `\n`
    
     list = list + msg 
     }
