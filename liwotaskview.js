@@ -65,6 +65,11 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   let t = JSON.parse(task_list)
   var i,X
   var list = ""
+  for (var n in t){
+    if (t[n].stockTotalDaySurplus == 0 && t[n].buttonStr == "明日再来"){
+      t.splice(n,1)
+    }
+  }
   for (i=0; i<t.length;i++){
     x = t[i]
     var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
