@@ -61,13 +61,13 @@ var params4 = {
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
-  let task_list = JSON.stringify(task_data,["taskName","unitPrice","buttonStr"])
+  let task_list = JSON.stringify(task_data,["stockTotalDaySurplus","taskName","unitPrice","buttonStr"])
   let t = JSON.parse(task_list)
   var i,X
   var list = ""
   for (i=0; i<t.length;i++){
     x = t[i]
-    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + `\n`
+    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
    
     list = list + msg 
     }
