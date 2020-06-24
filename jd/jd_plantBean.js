@@ -5,7 +5,7 @@
 [task_local]
 1 7-21/2 * * * jd_plantBean.js
 // Loon
-cron "1 7-21/2 * * *" script-path=https://github.com/nzw9314/QuantumultX/raw/master/Task/jd_plantBean.js,tag=京东种豆得豆
+cron "1 7-21/2 * * *" script-path=bokuosusume/JavaScript/master/jd/,tag=京东种豆得豆
 */
 
 const $hammer = (() => {
