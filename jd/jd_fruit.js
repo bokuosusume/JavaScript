@@ -2,7 +2,7 @@
 
 // [task_local]
 // #jd免费水果
-// cron "1 0 7,12,18 * * *" script-path=https://raw.githubusercontent.com/iepngs/Script/master/jd/fruit.js,tag=jd免费水果
+// cron "1 0 7,12,18 * * *" script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/jd/jd_fruit.js,tag=jd免费水果
 
 const $hammer = (() => {
     const isRequest = "undefined" != typeof $request,
