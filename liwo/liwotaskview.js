@@ -64,8 +64,9 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var i,x
   var list = ""
   for (var n in t){
-    if (t[n].stockTotalDaySurplus == 0 ){
+    if (t[n]&&t[n].stockTotalDaySurplus == 0 ){
       t.splice(n,1);
+      i--;
       break;
     }
   }
