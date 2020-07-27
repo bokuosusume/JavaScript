@@ -76,22 +76,22 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     list = list + msg 
     }
     let subTitle = `😊梨涡闲时提醒`
-    if (p.url == pick){  
+    if (p.url == pick && list){  
       let title = `--票选任务详情--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
-    else if (p.url == review){
+    else if (p.url == review && list){
       let title = `--调研任务详情--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
-    else if (p.url == talk){
+    else if (p.url == talk && list){
       let title = `--话题任务详情--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     } 
-    else if (p.url == invite){
+    else if (p.url == invite && list){
       let title = `--测评任务详情--`
       $notification.post(subTitle, title,list)
       console.log(list) 
