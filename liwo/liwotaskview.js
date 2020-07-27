@@ -61,9 +61,9 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
   let task_list = JSON.stringify(task_data,["taskName","detail","unitPrice","buttonStr","stockTotalDaySurplus"])
   let t = JSON.parse(task_list)
-  var i,x
+  var i,x,n
   var list = ""
-  for (var n in t){
+  for (n=0; n<t.length; n++){
     if (t[n]&&t[n].stockTotalDaySurplus == 0 ){
       delete t[n]
       
