@@ -85,27 +85,27 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     }
     let subTitle = `😊梨涡闲时提醒🔔`
     if (p.url == pick && list){  
-      let title = "--📬票选任务详情--有任务有任务"
+      let title = "--📬票选任务详情--有任务有任务啦--"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
     else if (p.url == review && list){
-      let title = "--📋调研任务详情--有任务有任务"
+      let title = "--📋调研任务详情--有任务有任务啦--"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
     else if (p.url == talk && list){
-      let title = "--💭话题任务详情--有任务有任务"
+      let title = "--💭话题任务详情--有任务有任务啦--"
       $notification.post(subTitle, title,list)
       console.log(list) 
     } 
     else if (p.url == invite && list){
-      let title = "--🔍测评任务详情--有任务有任务"
+      let title = "--🔍测评任务详情--有任务有任务啦--"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
     else if (p.url == look && list){
-      let title = "--👀看看任务详情--有任务有任务"
+      let title = "--👀看看任务详情--有任务有任务啦--"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
