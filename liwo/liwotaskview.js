@@ -65,8 +65,8 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var list = ""
   for (n=0; n<t.length; n++){
     if (t[n]&&t[n].stockTotalDaySurplus == 0 ){
-      delete t[n]
-      
+      t.splice(n,1)
+      n--
       
     }
   }
