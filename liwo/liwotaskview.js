@@ -58,16 +58,19 @@ var params4 = {
 
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
-  let taskInfoList = d.resultData.data.queryTaskListInfo.taskInfoList
-  var i
+  let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
+  let task_list = JSON.stringify(task_data,["taskName","detail","unitPrice","buttonStr"])
+  let t = JSON.parse(task_list)
+  var i,x
   var list = ""
-  for (var n in taskInfoList){
-    if (taskInfoList[n].stockTotalDaySurplus == 0 ){
-      delete taskInfoList[n]
+  for (var n in t){
+    if (t[n].stockTotalDaySurplus == 0 ){
+      delete t[n]
     }
   }
-  for (i=0; i<taskInfoList.length;i++){
-    var msg = (i+1)+"."+"🏷️"+ taskInfoList.taskName[i] +" "+"💰"+ taskInfoList[i].unitPrice +"元 "+"👉"+ taskInfoList[i].buttonStr + " 名额"+taskInfoList[i].stockTotalDaySurplus +`\n`
+  for (i=0; i<t.length;i++){
+    var x = t[i]
+    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     list = list + msg 
     }
     let subTitle = `😊梨涡闲时提醒`
