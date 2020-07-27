@@ -74,24 +74,24 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     list = list + msg 
     }
-    let subTitle = `😊梨涡闲时提醒`
+    let subTitle = `😊梨涡闲时提醒🔔`
     if (p.url == pick && list){  
-      let title = `--票选任务详情--`
+      let title = `--📬票选任务详情👇--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
     else if (p.url == review && list){
-      let title = `--调研任务详情--`
+      let title = `--📋调研任务详情👇--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
     else if (p.url == talk && list){
-      let title = `--话题任务详情--`
+      let title = `--💭话题任务详情👇--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     } 
     else if (p.url == invite && list){
-      let title = `--测评任务详情--`
+      let title = `--🔍测评任务详情👇--`
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
@@ -100,6 +100,6 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
 )}
 get_data(params1)
 get_data(params2)
-get_data(params3)
 get_data(params4)
+get_data(params3)
 $done({})
