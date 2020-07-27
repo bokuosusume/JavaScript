@@ -26,6 +26,12 @@ const talk = encodeURI (url + JSON.stringify
      "pageNo":1,
      "pageSize":10,
      "clientType":""}))
+const look = encodeURI (url + JSON.stringify
+   ({"clientVersion":"4.1.0",
+     "taskType":"7",
+     "pageNo":1,
+     "pageSize":10,
+     "clientType":""}))
 
 const headers = {"Accept": "application/json, text/plain, */*",
 "Accept-Encoding": "gzip, deflate, br",
@@ -55,7 +61,10 @@ var params4 = {
     url:talk,
     headers:headers,
 }
-
+var params5 = {
+    url:look,
+    headers:headers,
+}
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
@@ -95,6 +104,11 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
+    else if (p.url == look && list){
+      let title = "--👀看看任务详情--有任务有任务"
+      $notification.post(subTitle, title,list)
+      console.log(list) 
+    }
     else {$notification.post(subTitle, `获取失败`)}
   }
 )}
@@ -102,4 +116,5 @@ get_data(params1)
 get_data(params2)
 get_data(params4)
 get_data(params3)
+get_data(params5)
 $done({})
