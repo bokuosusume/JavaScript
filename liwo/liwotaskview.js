@@ -59,7 +59,7 @@ var params4 = {
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
-  let task_list = JSON.stringify(task_data,["taskName","detail","unitPrice","buttonStr"])
+  let task_list = JSON.stringify(task_data,["taskName","detail","unitPrice","buttonStr","stockTotalDaySurplus"])
   let t = JSON.parse(task_list)
   var i,x
   var list = ""
