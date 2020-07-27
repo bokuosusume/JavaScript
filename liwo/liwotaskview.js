@@ -76,7 +76,7 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     }
     let subTitle = `😊梨涡闲时提醒🔔`
     if (p.url == pick && list){  
-      let title = "--📬票选任务详情--共"+ list.length +"个"
+      let title = "--📬票选任务详情--共"+ JSON.parse(list).length +"个"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
@@ -91,7 +91,7 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
       console.log(list) 
     } 
     else if (p.url == invite && list){
-      let title = "--🔍测评任务详情--共"+ list.length +"个"
+      let title = "--🔍测评任务详情--共"+ JSON.parse(list).length +"个"
       $notification.post(subTitle, title,list)
       console.log(list) 
     }
