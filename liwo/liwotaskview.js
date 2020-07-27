@@ -64,8 +64,8 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var i,X
   var list = ""
   for (var n in t){
-    if (t[n].stockTotalDaySurplus == 0 && t[n].buttonStr == "明日再来"){
-      t.splice(n,1)
+    if (t[n].stockTotalDaySurplus == 0 ){
+      delete t[n]
     }
   }
   for (i=0; i<t.length;i++){
