@@ -79,40 +79,40 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
       n--     
     }
   }
+  console.log(t)
   let num = t.length
   for (i=0; i<t.length;i++){
     var x = t[i]
-    if (x.buttonColor == 1){
-    var msg = (i+1)+"."+" ✅"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
-    }
-    else {var msg = (i+1)+"."+" ⏰"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟠"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
-    }
     
-    list = list + msg 
+  if (x.buttonColor == 1){
+    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    list = list + msg
     }
+}
     let subTitle = `😊梨涡闲时提醒 点击通知跳转APP🔔`
+    
     if (p.url == pick && list){  
-      let title = "--📬票选任务详情--"+"共"+ num +"个任务--"
+      let title = "--📬票选任务详情--"+"现在有"+ num +"个任务--"
       $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
+      console.log(list)
     }
     else if (p.url == review && list){
-      let title = "--📋调研任务详情--"+"共"+ num +"个任务--"
+      let title = "--📋调研任务详情--"+"现在有"+ num +"个任务--"
       $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else if (p.url == talk && list){
-      let title = "--💭话题任务详情--"+"共"+ num +"个任务--"
+      let title = "--💭话题任务详情--"+"现在有"+ num +"个任务--"
       $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     } 
     else if (p.url == invite && list){
-      let title = "--🔍测评任务详情--"+"共"+ num +"个任务--"
+      let title = "--🔍测评任务详情--"+"现在有"+ num +"个任务--"
       $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else if (p.url == look && list){
-      let title = "--👀看看任务详情--"+"共"+ num +"个任务--"
+      let title = "--👀看看任务详情--"+"现在有"+ num +"个任务--"
       $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
@@ -120,8 +120,9 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   }
 )}
 get_data(params1)
-get_data(params2)
-get_data(params4)
-get_data(params3)
-get_data(params5)
+setTimeout(get_data(params4),10)
+setTimeout(get_data(params2),10)
+setTimeout(get_data(params5),10)
+setTimeout(get_data(params3),10)
+
 $done({})
