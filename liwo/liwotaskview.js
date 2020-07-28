@@ -81,7 +81,9 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   let num = t.length
   for (i=0; i<t.length;i++){
     var x = t[i]
-    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"👉"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    if (x.buttonStr == "立刻参与"){
+    var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    }
     list = list + msg 
     }
     let subTitle = `😊梨涡闲时提醒🔔`
