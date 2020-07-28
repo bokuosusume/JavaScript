@@ -90,34 +90,43 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     
     list = list + msg 
     }
-    let subTitle = `😊梨涡闲时提醒 点击通知跳转APP🔔`
+    var subTitle = `😊梨涡闲时提醒 点击通知跳转APP🔔`
+    var title_pick = "--📬票选任务详情--"+"共"+ num +"个任务--"
+    var title_review = "--📬调研任务详情--"+"共"+ num +"个任务--"
+    var title_talk = "--💭话题任务详情--"+"共"+ num +"个任务--"
+    var title_invite = "--🔍测评任务详情--"+"共"+ num +"个任务--"
+    var title_look = "--👀看看任务详情--"+"共"+ num +"个任务--"
+    
     if (p.url == pick && list){  
-      let title = "--📬票选任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
+       var pick_list = list
+       console.log(list) 
     }
-    else if (p.url == review && list){
-      let title = "--📋调研任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
+    else if (p.url == review && list){   
+      var review_list = list
       console.log(list) 
     }
     else if (p.url == talk && list){
-      let title = "--💭话题任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
+      var talk_llist = list
+      
       console.log(list) 
     } 
     else if (p.url == invite && list){
-      let title = "--🔍测评任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
+      var invite_list = list
       console.log(list) 
     }
     else if (p.url == look && list){
-      let title = "--👀看看任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
+      var look_list = list
       console.log(list) 
     }
     else {$notification.post(subTitle, `获取失败`)}
   }
+  var merge_list = title_pick +`\n`+ pick_list + 
+                   title_review +`\n`+ review_list +
+                   title_look +`\n` + look_list +
+                   title_talk +`\n` +talk_llist +
+                   title_invite +`\n`+invite_list
+   return  merge_list   ;                               
+                                   
 )}
 get_data(params1)
 get_data(params2)
