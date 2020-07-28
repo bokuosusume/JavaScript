@@ -2,6 +2,7 @@ const CookieName = 'Liwo'
 const Key = 'CookieJD'
 const Val = $persistentStore.read(Key)
 const url = "https://ms.jr.jd.com/gw/generic/bt/h5/m/queryLazyTaskList?time=-&reqData="
+const appurl = "yocial://plaza"
 
 const review = encodeURI (url + JSON.stringify
 ({"clientVersion":"4.1.0",
@@ -89,30 +90,30 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     
     list = list + msg 
     }
-    let subTitle = `😊梨涡闲时提醒🔔`
+    let subTitle = `😊梨涡闲时提醒 点击通知跳转APP🔔`
     if (p.url == pick && list){  
       let title = "--📬票选任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list)
+      $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else if (p.url == review && list){
       let title = "--📋调研任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list)
+      $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else if (p.url == talk && list){
       let title = "--💭话题任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list)
+      $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     } 
     else if (p.url == invite && list){
       let title = "--🔍测评任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list)
+      $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else if (p.url == look && list){
       let title = "--👀看看任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list)
+      $notification.post(subTitle, title,list,appurl)
       console.log(list) 
     }
     else {$notification.post(subTitle, `获取失败`)}
