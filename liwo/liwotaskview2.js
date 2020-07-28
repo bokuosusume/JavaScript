@@ -107,11 +107,11 @@ var obj_look =    alllist(get_data(params5))
                                       
 var subTitle = `😊梨涡闲时任务查看 点击通知跳转APP🔔`                       
 var merge =   
-    "--📬票选任务详情--"+"今日共"+ get_data(params1).length +"个任务--"+`\n`+ obj_pick
-    "--📋调研任务详情--"+"今日共"+ get_data(params2).length +"个任务--"+`\n`+ obj_review
-    "--💭话题任务详情--"+"今日共"+ get_data(params4).length +"个任务--"+`\n`+ obj_talk
-    "--🔍测评任务详情--"+"今日共"+ get_data(params3).length +"个任务--"+`\n`+ obj_invite
-    "--👀看看任务详情--"+"今日共"+ get_data(params5).length +"个任务--"+`\n`+ obj_look
+    "--📬票选任务详情--"+"今日共"+ get_data(params1).length +"个任务--"+`\n`+ obj_pick +
+    "--📋调研任务详情--"+"今日共"+ get_data(params2).length +"个任务--"+`\n`+ obj_review +
+    "--💭话题任务详情--"+"今日共"+ get_data(params4).length +"个任务--"+`\n`+ obj_talk +
+    "--🔍测评任务详情--"+"今日共"+ get_data(params3).length +"个任务--"+`\n`+ obj_invite +
+    "--👀看看任务详情--"+"今日共"+ get_data(params5).length +"个任务--"+`\n`+ obj_look 
      
 $notification.post(subTitle, merge, appurl)   
                                     
