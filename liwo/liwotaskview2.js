@@ -66,22 +66,28 @@ var params5 = {
     url:look,
     headers:headers,
 }
+
+
 function get_data(p) {$httpClient.get(p,function(error, response, rd){
   var d = JSON.parse(rd)
   let task_data = d.resultData.data.queryTaskListInfo.taskInfoList
   let task_list = JSON.stringify(task_data,["taskName","buttonColor","unitPrice","buttonStr","stockTotalDaySurplus"])
   let t = JSON.parse(task_list)
-  var i,x,n
-  var list = ""
+  var n
   for (n=0; n<t.length; n++){
     if (t[n]&&t[n].stockTotalDaySurplus == 0 ){
       t.splice(n,1)
       n--     
     }
-  }
-  let num = t.length
-  for (i=0; i<t.length;i++){
-    var x = t[i]
+   return t
+  }  
+)}
+
+function alllist(a){
+ var i,x
+ var list = ""
+ for (i=0; i<a.length;i++){
+    var x = a[i]
     if (x.buttonColor == 1){
     var msg = (i+1)+"."+" ✅"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     }
@@ -90,38 +96,24 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     
     list = list + msg 
     }
-    let subTitle = `😊梨涡闲时提醒 点击通知跳转APP🔔`
-    if (p.url == pick && list){  
-      let title = "--📬票选任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
-    }
-    else if (p.url == review && list){
-      let title = "--📋调研任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
-    }
-    else if (p.url == talk && list){
-      let title = "--💭话题任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
-    } 
-    else if (p.url == invite && list){
-      let title = "--🔍测评任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
-    }
-    else if (p.url == look && list){
-      let title = "--👀看看任务详情--"+"共"+ num +"个任务--"
-      $notification.post(subTitle, title,list,appurl)
-      console.log(list) 
-    }
-    else {$notification.post(subTitle, `获取失败`)}
-  }
-)}
-get_data(params1)
-get_data(params2)
-get_data(params4)
-get_data(params3)
-get_data(params5)
+    return list
+}
+                      
+var obj_pick =    alllist(get_data(params1))
+var obj_review =  alllist(get_data(params2))
+var obj_invite =  alllist(get_data(params3))
+var obj_talk =    alllist(get_data(params4))
+var obj_look =    alllist(get_data(params5))                                  
+                                      
+var subTitle = `😊梨涡闲时任务查看 点击通知跳转APP🔔`                       
+var merge =   
+    "--📬票选任务详情--"+"今日共"+ get_data(params1).length +"个任务--"+`\n`+ obj_pick
+    "--📋调研任务详情--"+"今日共"+ get_data(params2).length +"个任务--"+`\n`+ obj_review
+    "--💭话题任务详情--"+"今日共"+ get_data(params4).length +"个任务--"+`\n`+ obj_talk
+    "--🔍测评任务详情--"+"今日共"+ get_data(params3).length +"个任务--"+`\n`+ obj_invite
+    "--👀看看任务详情--"+"今日共"+ get_data(params5).length +"个任务--"+`\n`+ obj_look
+     
+$notification.post(subTitle, merge, appurl)   
+                                    
+
 $done({})
