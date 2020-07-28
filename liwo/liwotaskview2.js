@@ -81,7 +81,7 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     }
    return t
   }  
-)}
+}
 
 function alllist(a){
  var i,x
