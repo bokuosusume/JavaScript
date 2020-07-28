@@ -119,10 +119,10 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     else {$notification.post(subTitle, `获取失败`)}
   }
 )}
-get_data(params1)
-setTimeout(get_data(params4),10)
-setTimeout(get_data(params2),10)
+get_data(params4)
 setTimeout(get_data(params5),10)
+setTimeout(get_data(params2),10)
+setTimeout(get_data(params1),10)
 //setTimeout(get_data(params3),10)
 
 $done({})
