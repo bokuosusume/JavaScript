@@ -2,7 +2,7 @@ const CookieName = 'Liwo'
 const Key = 'CookieJD'
 const Val = $persistentStore.read(Key)
 const url = "https://ms.jr.jd.com/gw/generic/bt/h5/m/queryLazyTaskList?time=-&reqData="
-const appurl = "yocial://plaza"
+const appurl = "yocial://free_time"
 
 const review = encodeURI (url + JSON.stringify
 ({"clientVersion":"4.1.0",
