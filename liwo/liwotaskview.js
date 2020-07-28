@@ -84,6 +84,10 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
     if (x.buttonColor == 1){
     var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     }
+    if(x.buttonColor == 3) {var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟠"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    }
+    if(x.buttonColor == 4) {var msg = (i+1)+"."+"🏷️"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🔵"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    }
     list = list + msg 
     }
     let subTitle = `😊梨涡闲时提醒🔔`
