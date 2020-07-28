@@ -82,9 +82,9 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   for (i=0; i<t.length;i++){
     var x = t[i]
     if (x.buttonColor == 1){
-    var msg = (i+1)+"."+"✅"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    var msg = (i+1)+"."+" ✅"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟢"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     }
-    else {var msg = (i+1)+"."+"⏰"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟠"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
+    else {var msg = (i+1)+"."+" ⏰"+ x.taskName +" "+"💰"+ x.unitPrice +"元 "+"🟠"+ x.buttonStr + " 名额"+x.stockTotalDaySurplus +`\n`
     }
     
     list = list + msg 
