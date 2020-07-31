@@ -27,11 +27,14 @@ function sign() {
       let detail = ``
       if (result.resultCode == 0 && result.resultMsg == '操作成功') {
         subTitle = `❤京东特权值签到成功`
+        sams.log(result)
       } else if (result.resultCode == 3) {
           subTitle = `💔京东特权值签到失败,请重新获取cookie`
+          sams.log(result)
       } else {
         subTitle = `未知`
         detail = `❗ ${result.resultrMsg}`
+        sams.log(result)
       }
       sams.msg(title, subTitle, detail)
     })
