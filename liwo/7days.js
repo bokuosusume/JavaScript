@@ -21,11 +21,12 @@ const headers = {"Accept": "application/json, text/plain, */*","Accept-Encoding"
 
 //获取自1970年1月1日00:00:00 UTC以来经过的毫秒数
 const nowtime = Date.now()
+const changebody = lwbody.replace(/(&t=)\d*/,"&t=" + nowtime)
 
 var params = {
     url:"https://api.m.jd.com/api/v1/sign/doSign",
     headers:headers,
-    body:lwbody
+    body:changebody
 }
 
 sign()
