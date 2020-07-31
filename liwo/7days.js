@@ -22,7 +22,7 @@ const headers = {"Accept": "application/json, text/plain, */*","Accept-Encoding"
 //获取自1970年1月1日00:00:00 UTC以来经过的毫秒数并更新到消息体内
 const nowtime = Date.now()
 const changebody = lwbody.replace(/(&t=)\d*/,"&t=" + nowtime)
-console.log("刷新时间成功 "+"Time:" + nowtime + "Body:"changebody)
+console.log("刷新时间成功 "+"Time:" + nowtime + "Body:" + changebody)
 
 var params = {
     url:"https://api.m.jd.com/api/v1/sign/doSign",
