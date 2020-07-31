@@ -1,5 +1,5 @@
 // https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/doSign\?reqData=%7B%7D
-/*
+/*弃用！！
 *http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/queryUserSignFlow script-path=https://github.com/bokuosusume/JavaScript/raw/master/jd/jdtqzcookie.js, tag=京东特权值cookie
 *cron "5 8 * * *" script-path=https://github.com/bokuosusume/JavaScript/raw/master/jd/jdtqz.js, tag= 京东特权值
 *
