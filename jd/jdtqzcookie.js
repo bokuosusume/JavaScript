@@ -54,3 +54,4 @@ function init() {
     $done(value)
   }
   return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
+ sams.done()
