@@ -41,8 +41,7 @@ function sign(){
       // 签到OK
       if (result.status == true) {
          let subTitle = `💚签到成功`
-         let detail =
-             result.data.message
+         let detail = "✅" +result.data.message
          $notification.post(title,
              subTitle, detail)
          console.log(detail)
@@ -50,7 +49,7 @@ function sign(){
       //签过到了
       else if (result.status == false) {
          let subTitle = `💛您已签到`
-         let detail = result.error.message
+         let detail = "❕" +result.error.message
          $notification.post(title,
              subTitle, detail)
          console.log(detail)
@@ -58,7 +57,7 @@ function sign(){
       //失败
       else {
          let subTitle = `💔失败详情`
-         let detail = result
+         let detail = "❗" +result
          console.log(detail)
          $notification.post(title,
              subTitle, detail)
