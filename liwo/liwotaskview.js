@@ -74,6 +74,7 @@ function get_data(p) {$httpClient.get(p,function(error, response, rd){
   let task_list = JSON.stringify(task_data,["taskName","buttonColor","unitPrice","buttonStr","stockTotalDaySurplus"])
   let t = JSON.parse(task_list)
   var i,x,n
+  console.log("获取列表成功")
   var list = ""
   for (n=0; n<t.length; n++){
     if (t[n]&&t[n].stockTotalDaySurplus == 0 ){
