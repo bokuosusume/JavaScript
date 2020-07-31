@@ -14,7 +14,7 @@
  * hostname = api.m.jd.com
  */
 
-const CookieName = '梨涡任务查看'
+const CookieName = '梨涡闲时任务提醒'
 const Key = 'CookieJD'
 const Val = $request.headers['Cookie']
 
