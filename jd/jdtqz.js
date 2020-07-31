@@ -20,7 +20,7 @@ const params ={
 sign()
 
 function sign() {
-    sams.get(url, (error, response, data) => {
+    sams.get(params, (error, response, data) => {
       const result = JSON.parse(data)
       const title = `${cookieName}`
       let subTitle = ``
