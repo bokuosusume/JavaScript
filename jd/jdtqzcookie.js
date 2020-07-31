@@ -1,5 +1,8 @@
 // https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/doSign?reqData=%7B%7D
-
+/*http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/queryUserSignFlow script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/jd/jdtqzcookie.js
+* cron "5 8 * * *" script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/jd/jdtqz.js,tag= 京东特权值
+* 登录京东账号后进 https://btfront.jd.com/release/growth/index.html 签到
+*/
 const cookieName = '京东特权值'
 const tqzKey = 'CookieJD'
 const sams = init()
@@ -7,8 +10,8 @@ const cookieVal = $request.headers['Cookie']
 
 if (cookieVal) {
   if (sams.setdata(cookieVal, tqzKey)) {
-    chen.msg(`${cookieName}`, '❤获取Cookie成功', '')
-    chen.log(`[${cookieName}] ❤获取Cookie: 成功, cookie: ${cookieVal}`)
+    sams.msg(`${cookieName}`, '❤获取Cookie成功', '')
+    sams.log(`[${cookieName}] ❤获取Cookie: 成功, cookie: ${cookieVal}`)
   }
 }
 
