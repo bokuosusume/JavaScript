@@ -1,35 +1,41 @@
-const cookieName ='特权值'
+const cookieName ='京东特权值'
 const tqzKey = 'CookieJD'
 const sams = init()
 let cookieVal = sams.getdata(tqzKey)
+const headers ={"Accept": "application/json, text/plain, */*",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept-Language": "zh-cn",
+                "Connection": "keep-alive",
+                "Cookie": cookieVal,
+                "Host": "ms.jr.jd.com",
+                "Origin": "https://btfront.jd.com",
+                "Referer": "https://btfront.jd.com/release/growth/index.html",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1",}
+const signurl = 'https://ms.jr.jd.com/gw/generic/bt/h5/m/doSign?reqData=%7B%7D'
+const params ={
+    url:signurl,
+    headers:headers,
+}
+
 sign()
+
 function sign() {
-    let url = {url: 'https://ms.jr.jd.com/gw/generic/bt/h5/m/doSign?',headers: { Cookie:cookieVal}}
-    url.headers['Origin'] = 'https://btfront.jd.com'
-    url.headers['Connection'] = `keep-alive`
-    url.headers['Content-Type'] = `application/x-www-form-urlencoded`
-    url.headers['Accept'] = `application/json, text/plain, */*`
-    url.headers['Host'] = `ms.jr.jd.com`
-    url.headers['User-Agent'] = `Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 mediaCode=SFEXPRESSAPP-iOS-ML`
-    url.headers['Accept-Language'] = `en-us`
-    url.headers['Accept-Encoding'] = `gzip, deflate, br`
-    chen.get(url, (error, response, data) => {
+    sams.get(url, (error, response, data) => {
       const result = JSON.parse(data)
       const title = `${cookieName}`
       let subTitle = ``
       let detail = ``
-    
       if (result.resultCode == 0 && result.resultMsg == '操作成功') {
-        subTitle = `签到结果: 成功`
+        subTitle = `❤京东特权值签到成功`
       } else if (result.resultCode == 3) {
-          subTitle = `签到结果: 失败,需要重新获得cookie`
+          subTitle = `💔京东特权值签到失败,请重新获取cookie`
       } else {
-        subTitle = `签到结果: 未知`
-        detail = `说明: ${result.resultrMsg}`
+        subTitle = `未知`
+        detail = `❗ ${result.resultrMsg}`
       }
-      chen.msg(title, subTitle, detail)
+      sams.msg(title, subTitle, detail)
     })
-    chen.done()
+    sams.done()
     }
 
 
