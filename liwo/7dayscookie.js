@@ -11,7 +11,7 @@
  */
  
  
-const CookieName = 'lw7DaysSignCookie'
+const CookieName = '😀梨涡签到领钱'
 const lwKey = 'CookieJD'
 const lwVal = $request.headers['Cookie']
 const lwbody = $request.body
@@ -22,7 +22,7 @@ if (lwVal && lwbody){
   let body = $persistentStore.write(lwbody, lwbodyKey)
   let msg = `${CookieName}`
   if (cookie && body){
-    $notification.post(msg, '梨涡签到Body and Cookie写入成功', '详见日志')
+    $notification.post(msg, '❤梨涡签到Body and Cookie写入成功', '详见日志')
     console.log(msg)
     console.log(lwVal)
     console.log(lwbody)
