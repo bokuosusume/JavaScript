@@ -21,3 +21,21 @@ http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean tag=
 [MITM]  
 
 hostname = api.m.jd.com
+
+
+## 梨涡（京东大学生特权app）7天签到领现金
+
+进APP签到获取cookie
+
+【Loon 2.1+ 脚本配置】
+
+[Script]
+
+cron "7 0 * * *" tag=梨涡签到领现金, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwo/7days.js
+
+http-request https:\/\/api\.m\.jd\.com\/api\/v1\/sign\/doSign tag=梨涡签到领现金Cookie, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwo/7dayscookie.js
+ 
+ [MITM]
+
+hostname = api.m.jd.com
+
