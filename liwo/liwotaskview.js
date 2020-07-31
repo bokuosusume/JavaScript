@@ -125,6 +125,6 @@ get_data(params4)
 setTimeout(get_data(params5),10)
 setTimeout(get_data(params2),10)
 setTimeout(get_data(params1),10)
-//setTimeout(get_data(params3),10)
+setTimeout(get_data(params3),10)
 
 $done({})
