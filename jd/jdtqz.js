@@ -1,12 +1,14 @@
+//http-request https://api.m.jd.com/client.action.*functionId=signBean tag=获取京东Cookie, script-path=https://raw.githubusercontent.com/bokuosusume/JavaScript/master/liwo/liwocookie.js
+//cron "5 8 * * *" script-path=https://github.com/bokuosusume/JavaScript/raw/master/jd/jdtqz.js, tag= 京东特权值
 const cookieName ='京东特权值'
-const tqzKey = 'CookieJD'
+const Key = 'CookieJD'
 const sams = init()
-let cookieVal = sams.getdata(tqzKey)
+let Val = sams.getdata(Key)
 const headers ={"Accept": "application/json, text/plain, */*",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Accept-Language": "zh-cn",
                 "Connection": "keep-alive",
-                "Cookie": cookieVal,
+                "Cookie": Val,
                 "Host": "ms.jr.jd.com",
                 "Origin": "https://btfront.jd.com",
                 "Referer": "https://btfront.jd.com/release/growth/index.html",
