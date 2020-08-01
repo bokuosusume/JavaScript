@@ -12,11 +12,13 @@
  */
 
  //支持QX loon surge
+
+const sams = init()
 const lwKey = 'CookieJD'
 const lwVal = sams.getdata(lwKey)
 const lwbodyKey = "Body"
 const lwbody = sams.getdata(lwbodyKey)
-const sams = init()
+
 
 const headers = {"Accept": "application/json, text/plain, */*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "keep-alive","Content-Length": "246","Content-Type": "application/x-www-form-urlencoded","Cookie": lwVal,"Host": "api.m.jd.com","Origin": "https://2do.jd.com","Referer": "https://2do.jd.com/events/7-days/","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148/yocial,"}
 
