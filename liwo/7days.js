@@ -30,6 +30,12 @@ var params = {
     body:changebody
 }
 
+var resetparams = {
+    url:"https://api.m.jd.com/api/v1/sign/resetSign",
+    headers:headers,
+    body:changebody
+}
+
 sign()
 
 function sign(){
@@ -47,13 +53,18 @@ function sign(){
          console.log(detail)
       }
       //签过到了
-      else if (result.status == false) {
+      else if (result.status == false && result.error.code == 39002) {
          let subTitle = `💛您已签到`
          let detail = "❕" +result.error.message
          $notification.post(title,
              subTitle, detail)
          console.log(detail)
       }
+      //重新新一轮签到
+      else if (result.status == false  && result.error.code == 39004) {
+        resetSign()
+        console.log("重新新一轮签到")
+                }
       //失败
       else {
          let subTitle = `💔失败详情`
@@ -66,6 +77,38 @@ function sign(){
 }
 
 
+function resetSign(){
+  $httpClient.post(resetparams,
+      (error,reponse,data)=>{
+        let result = JSON.parse(data)
+        console.log(result)
+        let title = `☺️梨涡签到领现金`
+        // 签到OK
+        if (result.status == true) {
+           let subTitle = `💚签到成功`
+           let detail = "✅" +result.data.message
+           $notification.post(title,
+               subTitle, detail)
+           console.log(detail)
+        }
+        //签过到了
+        else if (result.status == false ) {
+           let subTitle = `💛您已签到`
+           let detail = "❕" +result.error.message
+           $notification.post(title,
+               subTitle, detail)
+           console.log(detail)
+        }
+        //失败
+        else {
+           let subTitle = `💔失败详情`
+           let detail = "❗" +result
+           console.log(detail)
+           $notification.post(title,
+               subTitle, detail)
+        }
+     })
+}
  
 
 $done({})
