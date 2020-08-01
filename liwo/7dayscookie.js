@@ -24,9 +24,9 @@ if (lwVal && lwbody){
   let msg = `${CookieName}`
   if (cookie && body){
     sams.msg(msg, '❤梨涡签到Body and Cookie写入成功', '详见日志')
-    console.log(msg)
-    console.log(lwVal)
-    console.log(lwbody)
+    sams.log(msg)
+    sams.log(lwVal)
+    sams.log(lwbody)
     $done({})
     
   }
