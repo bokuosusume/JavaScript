@@ -10,7 +10,7 @@
 邀请链接 http://2do.jd.com/events/red-envelopes/?inviter=1236228340192960513&channel=cash&extParam=1260048962852974594#/  
 
 进野比大佬的京东京豆签到 bean.m.jd.com 再签到一下就能获取cookie了。
-
+```properties
 【Loon 2.1+ 脚本配置】:
 
 [Script]  
@@ -22,12 +22,12 @@ http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean tag=
 [MITM]  
 
 hostname = api.m.jd.com
-
+```
 
 ## 梨涡（京东大学生特权app）7天签到领现金
 
 进APP签到获取cookie
-
+```
 【Loon 2.1+ 脚本配置】
 
 [Script]
@@ -39,4 +39,4 @@ http-request https://api.m.jd.com/api/v1/sign/doSign script-path=https://raw.git
  [MITM]
 
 hostname = api.m.jd.com
-
+```
