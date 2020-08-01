@@ -1,7 +1,6 @@
 # JavaScript
 
-这是一个自己基于loon瞎倒腾的脚本，学艺不精还需要改进
-感谢各位大佬
+这是一个自己基于loon瞎倒腾的脚本，学艺不精还需要改进感谢各位大佬，部分支持QX Loon Sruge
 
 
 ## 梨涡（京东大学生特权app）的闲时任务查看与提醒
@@ -24,10 +23,10 @@ http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean tag=
 hostname = api.m.jd.com
 ```
 
-## 梨涡（京东大学生特权app）7天签到领现金
+## 梨涡（京东大学生特权app）7天签到领现金（支持QX Loon Surge）
 
 进APP签到获取cookie
-```
+```properties
 【Loon 2.1+ 脚本配置】
 
 [Script]
