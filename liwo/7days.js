@@ -61,6 +61,7 @@ function sign(){
          sams.msg(title,
              subTitle, detail)
          sams.log(detail)
+      }
       //签过到了
       else if (result.status == false && result.error.code == 39002) {
          let subTitle = `💛您已签到`
@@ -73,7 +74,7 @@ function sign(){
       else if (result.status == false  && result.error.code == 39004) {
         setTimeout(resetSign(),500)
         sams.log("重新新一轮签到")
-                }
+      }
       //失败
       else {
          let subTitle = `💔失败详情`
