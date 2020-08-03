@@ -55,6 +55,12 @@ function sign(){
              subTitle, detail)
          sams.log(detail)
       }
+      else if (result.status == false && result.error.code == 1007) {
+         let subTitle = `😈登陆失效请重新获取cookie`
+         let detail = "❕" +result.error.message
+         sams.msg(title,
+             subTitle, detail)
+         sams.log(detail)
       //签过到了
       else if (result.status == false && result.error.code == 39002) {
          let subTitle = `💛您已签到`
