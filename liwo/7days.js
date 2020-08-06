@@ -25,7 +25,9 @@ const headers = {"Accept": "application/json, text/plain, */*","Accept-Encoding"
 //获取自1970年1月1日00:00:00 UTC以来经过的毫秒数并更新到消息体内
 const nowtime = Date.now()
 const changebody = lwbody.replace(/(&t=)\d*/,"&t=" + nowtime)
-sams.log("刷新时间成功 "+"Time:" + nowtime + "Body:" + changebody)
+const resetboody =  changebody.replace(/v1_sign_doSign/,"v1_sign_resetSign")
+
+sams.log("刷新时间成功 "+"Time:" + nowtime )
 
 var params = {
     url:"https://api.m.jd.com/api/v1/sign/doSign",
@@ -36,7 +38,7 @@ var params = {
 var resetparams = {
     url:"https://api.m.jd.com/api/v1/sign/resetSign",
     headers:headers,
-    body:changebody
+    body:resetboody
 }
 
 sign()
